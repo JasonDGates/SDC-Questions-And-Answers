@@ -32,46 +32,6 @@ module.exports = function returnQuestions(product_id, count = 5) {
     )
   `;
 
-  // const text = `
-  // SELECT
-  //   json_agg(
-  //     json_build_object(
-  //       'question_id', questions.id,
-  //       'question_body', questions.question_body,
-  //       'question_date', questions.question_date,
-  //       'asker_name', questions.asker_name,
-  //       'question_reported', questions.reported,
-  //       'question_helpfulness', questions.question_helpfulness,
-  //       )
-  //     ),
-  //     json_agg(
-  //       json_build_object(
-  //         'id', answers.id,
-  //         'question_id', answers.question_id,
-  //         'body', answers.body,
-  //         'date', answers.date,
-  //         'answerer_name', answers.answerer_name,
-  //         'helpfulness', answers.helpfulness
-  //       ) WHERE answers.question_id=questions.id
-  //     )
-  // FROM
-  //   questions
-  // LEFT JOIN
-  //   answers
-  //   ON
-  //   answers.question_id=questions.id
-  // LEFT JOIN
-  //   photos
-  //   ON
-  //   photos.answer_id=answers.id
-  // WHERE
-  //   product_id=${product_id}
-  // GROUP BY
-  //   questions.id, answers.id
-  // LIMIT
-  //   ${count};
-  // `;
-
   return db.query(text)
     .then((response) => response.rows[0].json_build_object)
     .catch((error) => console.log(error));
