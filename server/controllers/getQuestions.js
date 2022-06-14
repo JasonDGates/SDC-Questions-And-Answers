@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const returnQuestions = require('../models/returnQuestions');
+const { returnQuestions } = require('../models');
 
 module.exports = function getQuestions(req, res) {
   const { product_id } = req.query;

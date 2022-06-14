@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const returnAnswers = require('../models/returnAnswers');
+const { returnAnswers } = require('../models');
 
 module.exports = function getAnswers(req, res) {
   const { question_id } = req.params;
