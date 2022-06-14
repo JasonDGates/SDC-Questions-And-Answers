@@ -12,7 +12,7 @@ module.exports = function returnQuestions(product_id, count = 5) {
         'question_date', (to_timestamp(question_date/1000) at time zone 'UTC'),
         'asker_name', asker_name,
         'question_helfulness', question_helpfulness,
-        'reported', reported,
+        'reported', reported::boolean,
 
         'answers', COALESCE((SELECT json_object_agg(answers.id, json_build_object(
           'id', answers.id,
@@ -73,6 +73,6 @@ module.exports = function returnQuestions(product_id, count = 5) {
   // `;
 
   return db.query(text)
-    .then((response) => response.rows[0])
+    .then((response) => response.rows[0].json_build_object)
     .catch((error) => console.log(error));
 };
