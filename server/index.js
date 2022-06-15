@@ -8,6 +8,7 @@ const {
   putQuestionHelpful,
   putReportQuestion,
   putAnswerHelpful,
+  putReportAnswer,
 } = require('./controllers');
 
 const app = express();
@@ -23,6 +24,7 @@ app.post('/qa/questions/:question_id/answers', postAnswer);
 app.put('/qa/questions/:question_id/helpful', putQuestionHelpful);
 app.put('/qa/questions/:question_id/report', putReportQuestion);
 app.put('/qa/answers/:answer_id/helpful', putAnswerHelpful);
+app.put('/qa/answers/:answer_id/report', putReportAnswer);
 
 app.listen(process.env.port, () => {
   console.log(`listening on Port: ${process.env.port}`);

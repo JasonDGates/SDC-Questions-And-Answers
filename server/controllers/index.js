@@ -5,3 +5,4 @@ module.exports.postAnswer = require('./postAnswer');
 module.exports.putQuestionHelpful = require('./putQuestionHelpful');
 module.exports.putReportQuestion = require('./putReportQuestion');
 module.exports.putAnswerHelpful = require('./putAnswerHelpful');
+module.exports.putReportAnswer = require('./putReportAnswer');

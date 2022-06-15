@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 const db = require('../db');
 
-module.exports = function putQuestionHelpfulModel(questionId) {
+module.exports = function putReportQuestionModel(questionId) {
   const helpfulUpdate = `
     UPDATE
       questions

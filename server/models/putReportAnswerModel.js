@@ -2,12 +2,12 @@
 /* eslint-disable camelcase */
 const db = require('../db');
 
-module.exports = function putAnswerHelpfulModel(answerId) {
+module.exports = function putReportAnswerModel(answerId) {
   const helpfulUpdate = `
     UPDATE
-      answers
+      answer
       SET
-        helpfulness = helpfulness + 1
+        reported = 1
       WHERE
       id = $1;
   `;
