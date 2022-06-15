@@ -35,7 +35,7 @@ CREATE TABLE photos(
       REFERENCES answers(id)
 );
 
--- CREATE INDEX idx_product_id ON questions(product_id);
--- CREATE INDEX idx_question_id ON answers(question_id);
--- CREATE INDEX idx_answer_id ON photos(answer_id);
--- CREATE INDEX idx_answers_reported on answers(reported) WHERE reported = 0;
+CREATE INDEX idx_product_id ON questions(product_id);
+CREATE INDEX idx_question_id ON answers(question_id);
+CREATE INDEX idx_answer_id ON photos(answer_id);
+CREATE INDEX idx_answers_reported on answers(reported) WHERE reported = 0;
