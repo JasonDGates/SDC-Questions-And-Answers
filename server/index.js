@@ -1,7 +1,13 @@
 const express = require('express');
 require('dotenv').config();
 const {
-  getQuestions, getAnswers, postQuestion, postAnswer, putQuestionHelpful, putReportQuestion,
+  getQuestions,
+  getAnswers,
+  postQuestion,
+  postAnswer,
+  putQuestionHelpful,
+  putReportQuestion,
+  putAnswerHelpful,
 } = require('./controllers');
 
 const app = express();
@@ -16,6 +22,7 @@ app.post('/qa/questions/:question_id/answers', postAnswer);
 
 app.put('/qa/questions/:question_id/helpful', putQuestionHelpful);
 app.put('/qa/questions/:question_id/report', putReportQuestion);
+app.put('/qa/answers/:answer_id/helpful', putAnswerHelpful);
 
 app.listen(process.env.port, () => {
   console.log(`listening on Port: ${process.env.port}`);
