@@ -16,6 +16,6 @@ module.exports = function postAnswer(req, res) {
       });
       return data;
     })
-    .then(() => res.status(201).send('answer created'))
+    .then(() => res.status(201).send('CREATED'))
     .catch((error) => console.log(error));
 };
